@@ -27,6 +27,7 @@ import {
   timeline,
   featuredBlogPosts,
 } from '@/lib/portfolio-data';
+import path from 'path';
 
 // small brand icons (LinkedIn/Facebook/Twitter) as inline SVGs
 function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {

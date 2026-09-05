@@ -1,9 +1,12 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter, Playfair_Display, Geist } from 'next/font/google';
 import { AuthProvider } from '@/components/auth-provider';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const playfair = Playfair_Display({
@@ -33,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={cn(inter.variable, playfair.variable, "font-sans", geist.variable)}>
       <body className="font-sans antialiased">
         <AuthProvider>
           <Navbar />
